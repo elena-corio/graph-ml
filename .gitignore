@@ -1,3 +1,5 @@
 # Environment files
 .gmlenv
 .venv
+/__pycache__/
+*.pyc

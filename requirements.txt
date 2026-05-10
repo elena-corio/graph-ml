@@ -1,2 +1,4 @@
-topologicpy==0.9.18
+topologicpy==0.9.27
 nbformat>=4.2.0
+requests
+python-igraph
