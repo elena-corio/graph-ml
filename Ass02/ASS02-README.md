@@ -1,7 +1,11 @@
 # Graph-Based Analysis of the FloorPlan of a Care Center for Children with Autism
 
 ## Introduction
-This research employs TopologicPy, a spatial design and analysis Python library, to construct and analyse graphs that demonstrate the potential of graph‑based methods in assessing how well the spatial configurations of autism centres align with autism‑friendly design principles.
+This research employs TopologicPy, a spatial design and analysis Python library, to construct and analyse graphs that evaluate how well the spatial configuration of an autism centre aligns with autism‑friendly design principles. 
+
+These principles typically emphasise predictable circulation, clear wayfinding, controlled sensory exposure, access to low‑stimulus retreat spaces, and balanced privacy and supervision.
+
+By translating the floorplan into a graph and analysing centrality measures, the study assesses how these spatial qualities emerge from the building’s layout and how effectively the environment supports autistic users.
 
 ![Floorplan](assets/img/floor_plan.png)
 
@@ -75,8 +79,16 @@ Conversely, the southern portion of the circulation spine emerges as the most in
 ![Degree](assets/img/degree.png)
 
 ## Conclusions
-The analysis demonstrates that intuitive circulation supports clear accessibility throughout the building while intentionally secluding therapeutic rooms as low‑stimulation, controlled environments.
+The analysis shows that intuitive circulation supports clear accessibility throughout the building while deliberately secluding therapeutic rooms as low‑stimulation, controlled environments. 
 
-Overall, the centrality patterns illustrate the balance required in autism‑friendly design: ensuring predictable, well‑connected routes without compromising the protected character of sensitive spaces.
+The centrality patterns highlight the balance required in autism‑friendly design: predictable, well‑connected routes paired with protected, low‑exposure spaces. 
+
+More broadly, the results demonstrate that graph‑based spatial analysis offers a rigorous, quantifiable method for evaluating these design principles. 
+
+Metrics such as closeness, betweenness, and degree centrality reveal how spatial configuration shapes sensory load, privacy gradients, and the clear circulation that are often difficult to capture through qualitative assessment alone.
 
 ## Future work
+Future work will incorporate a visibility analysis based on isovists, which is crucial for assessing how spatial configurations mediate the balance between privacy and opportunities for surveillance.
+The generated isovists are illustrated in the diagram below.
+
+![Isovist](assets/img/isovist.png)
