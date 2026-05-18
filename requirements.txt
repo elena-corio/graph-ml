@@ -1,4 +1,6 @@
-topologicpy==0.9.27
+topologicpy==0.9.33
 nbformat>=4.2.0
 requests
 python-igraph
+matplotlib
+seaborn

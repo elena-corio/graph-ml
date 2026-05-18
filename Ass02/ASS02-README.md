@@ -16,7 +16,7 @@ Their findings were published in the paper “Graph‑based Analysis of Best Pra
 
 ## Methoology
 
-### From grid to graph
+### Analysis Graph
 
 ![Shell](assets/img/shell.png)
 
@@ -26,13 +26,19 @@ First, the imported BREP was cleaned to remove triangulation. The cleaned floorp
 
 Centrality values were calculated for each graph vertex and subsequently transferred to the shell faces for visualisation.
 
-### Closeness and Betweenness Centrality
-Closeness centrality was calculated to assess spatial accessibility and circulation efficiency within the layout.Additionally, betweenness centrality was computed to measure the degree to which each node functions as a critical connector within the graph.
+### Graph-based analysis
+Closeness centrality was calculated to assess spatial accessibility and circulation efficiency within the layout.
 
-### Degree centrality
+Additionally, betweenness centrality was computed to measure the degree to which each node functions as a critical connector within the graph.
+
 Degree centrality was calculated to evaluate the connectivity of each space, representing the number of direct links each space maintains with others.
 
-The first step involved retrieving communities—i.e., rooms—from the floorplan. As shown in the figure below, the results are largely accurate, with only two rooms merging with portions of the corridor.
+Finally, PageRank was calculated to assess the significance of each space based on its 
+connection to other significant spaces
+
+
+### Communities detection
+The first step involved retrieving communities —i.e., rooms— from the floorplan. As shown in the figure below, the results are largely accurate, with only two rooms merging with portions of the corridor.
 
 ![Communities](assets/img/community.png)
 
@@ -41,6 +47,13 @@ A new shell was then generated, containing one face per room/community, and conv
 ![Graph](assets/img/graph2.png)
 
 After computing degree centrality for each node, the results were first interpolated back onto the original graph and then transferred to the shell for visualisation.
+
+### Cell complex and access graph
+The results obtained through communities detection were compared to a more precise analysis based on a complex shell. The 3d geometry of rooms and doors was imported as OBJ file and converted into a topological model. The derived access graph was used to calculate degree centrality. 
+
+![Graph](assets/img/graph2.png)
+
+Once again, the results were first interpolated back onto the original graph and then transferred to the shell for visualisation. This was possible because the brep used for the analysis graph was exported placed in the middle plane of the 3d object.
 
 ## Results and analysis
 
@@ -72,11 +85,29 @@ It also highlights a privacy gradient: the corridor leading to the head office, 
 ![Bridges](assets/img/bridges.png)
 
 ### Degree centrality
-Degree centrality shows that the sanitary and therapy rooms are among the most private spaces, with fewer direct connections, followed by the head office.
+The two methods—community detection and complex‑shell decomposition—produce slightly different centrality patterns, yet both consistently identify the corridors as the most central spaces, functioning as the main access spine for all rooms, followed by the reception area.
 
-Conversely, the southern portion of the circulation spine emerges as the most interconnected area. Reception, laboratory, and nursing spaces exhibit medium connectivity, making them easy to reach while maintaining functional separation.
+The complex‑shell method offers a more accurate reading, additionally highlighting the meeting room, psychology room, and laboratories as the most remote spaces, which aligns with their need for focus and acoustic protection. 
+
+This spatial hierarchy is coherent with best‑practice design for sensory‑sensitive users: high‑stimulus, high‑traffic functions remain central and easily reachable, while activities requiring calm, privacy, or reduced sensory load are naturally positioned at the periphery.
 
 ![Degree](assets/img/degree.png)
+
+![Degree](assets/img/degree1.png)
+
+### PageRank
+Both the normalised and not normalised methods were tested, and in both cases the heatmap matches perfectly the degree centrality (correlation coefficient 1).
+
+Results are visible in the table below.
+
+![Table](assets/img/table.png)
+
+## Correlation analysis
+A correlation analysis was performed for each case to examine the relationships among the spatial metrics: Closeness Centrality (CC), Betweenness Centrality (BC), Degree and PageRank. The resulting correlation matrices visually and numerically illustrate these relationships, where red indicates a strong positive correlation and blue indicates weak or no correlation.
+
+The closests centrality (CC) has a correlation of around 0.63 with all other metrics, while the coefficinet decreases to 0.5 between BC and Degree or Page Rank. The last two metrics have correlation of 1 between each other.
+
+![Correlation](assets/img/correlation.png)
 
 ## Conclusions
 The analysis shows that intuitive circulation supports clear accessibility throughout the building while deliberately secluding therapeutic rooms as low‑stimulation, controlled environments. 
