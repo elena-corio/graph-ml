@@ -51,7 +51,7 @@ After computing degree centrality for each node, the results were first interpol
 ### Cell complex and access graph
 The results obtained through communities detection were compared to a more precise analysis based on a complex shell. The 3d geometry of rooms and doors was imported as OBJ file and converted into a topological model. The derived access graph was used to calculate degree centrality. 
 
-![Graph](assets/img/graph2.png)
+![Graph](assets/img/graph3.png)
 
 Once again, the results were first interpolated back onto the original graph and then transferred to the shell for visualisation. This was possible because the brep used for the analysis graph was exported placed in the middle plane of the 3d object.
 
@@ -93,7 +93,7 @@ This spatial hierarchy is coherent with best‑practice design for sensory‑sen
 
 ![Degree](assets/img/degree.png)
 
-![Degree](assets/img/degree1.png)
+![Degree](assets/img/degree2.png)
 
 ### PageRank
 Both the normalised and not normalised methods were tested, and in both cases the heatmap matches perfectly the degree centrality (correlation coefficient 1).
