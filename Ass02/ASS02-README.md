@@ -98,10 +98,6 @@ This spatial hierarchy is coherent with best‑practice design for sensory‑sen
 ### PageRank
 Both the normalised and not normalised methods were tested, and in both cases the heatmap matches perfectly the degree centrality (correlation coefficient 1).
 
-Results are visible in the table below.
-
-![Table](assets/img/table.png)
-
 ## Correlation analysis
 A correlation analysis was performed for each case to examine the relationships among the spatial metrics: Closeness Centrality (CC), Betweenness Centrality (BC), Degree and PageRank. The resulting correlation matrices visually and numerically illustrate these relationships, where red indicates a strong positive correlation and blue indicates weak or no correlation.
 
@@ -117,6 +113,8 @@ The centrality patterns highlight the balance required in autism‑friendly desi
 More broadly, the results demonstrate that graph‑based spatial analysis offers a rigorous, quantifiable method for evaluating these design principles. 
 
 Metrics such as closeness, betweenness, and degree centrality reveal how spatial configuration shapes sensory load, privacy gradients, and the clear circulation that are often difficult to capture through qualitative assessment alone.
+
+![Table](assets/img/table.png)
 
 ## Future work
 Future work will incorporate a visibility analysis based on isovists, which is crucial for assessing how spatial configurations mediate the balance between privacy and opportunities for surveillance.
